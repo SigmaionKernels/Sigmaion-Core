@@ -1,0 +1,8 @@
+{
+  "id": "V02",
+  "name": "digital_false_self",
+  "description": "Costruzione di un'identità esterna ottimizzata per approvazione sociale.",
+  "effect": "consumo energetico su validazione esterna",
+  "mitigation": "output senza feedback loop, riduzione pubblicazione impulsiva",
+  "state": "active"
+}
