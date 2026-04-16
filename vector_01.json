@@ -1,0 +1,8 @@
+{
+  "id": "V01",
+  "name": "notification_intrusion",
+  "description": "Informazioni non richieste che interrompono il ciclo decisionale e deviano l'attenzione.",
+  "effect": "perdita di focus e frammentazione dell'input cognitivo",
+  "mitigation": "riduzione fonti, batch checking notifiche, isolamento temporale input",
+  "state": "active"
+}
