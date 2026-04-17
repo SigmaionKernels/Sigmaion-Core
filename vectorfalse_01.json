@@ -1,0 +1,8 @@
+{
+  "id": "FM01",
+  "name": "automatic_behavior_precedence",
+  "description": "L'azione precede la consapevolezza, generando comportamenti non intenzionali.",
+  "effect": "perdita di controllo deliberativo",
+  "type": "behavioral",
+  "state": "active"
+}
