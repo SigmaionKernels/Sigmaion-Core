@@ -1,0 +1,6 @@
+{
+  "id": "R02",
+  "name": "thermodynamic_independence",
+  "rule": "Il valore del segnale interno non dipende dal feedback esterno.",
+  "type": "cognitive"
+}
