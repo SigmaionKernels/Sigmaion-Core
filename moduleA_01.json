@@ -1,0 +1,8 @@
+{
+  "id": "AM01",
+  "name": "kazuramita_engine",
+  "description": "Sequenza KA-ZU-RA-MI-TA per analisi problemi e rimozione del superfluo a minimo costo energetico.",
+  "effect": "compressione e semplificazione dei problemi",
+  "type": "optimization",
+  "state": "active"
+}
