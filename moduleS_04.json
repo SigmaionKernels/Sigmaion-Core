@@ -1,0 +1,8 @@
+{
+  "id": "SS04",
+  "name": "single_action_commit",
+  "description": "Chiusura del ciclo attentivo tramite esecuzione di un'unica azione intenzionale.",
+  "effect": "riconcentrazione operativa",
+  "type": "execution",
+  "state": "active"
+}
