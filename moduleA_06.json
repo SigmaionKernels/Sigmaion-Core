@@ -1,0 +1,8 @@
+{
+  "id": "AM06",
+  "name": "zero_latency_node_state",
+  "description": "Condizione in cui intenzione e azione sono allineate senza ritardo.",
+  "effect": "massima coerenza decisionale",
+  "type": "execution",
+  "state": "active"
+}
