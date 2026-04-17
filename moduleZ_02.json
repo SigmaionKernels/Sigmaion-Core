@@ -1,0 +1,8 @@
+{
+  "id": "ZD02",
+  "name": "alpha_reset_neural_pacing",
+  "description": "Stimolazione ritmica a bassa frequenza per ricalibrare lo stato neurale.",
+  "effect": "stabilizzazione attenzione",
+  "type": "neural",
+  "state": "active"
+}
