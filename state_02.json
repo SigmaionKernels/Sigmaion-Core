@@ -1,0 +1,6 @@
+{
+  "id": "AS02",
+  "name": "sigma_state",
+  "description": "Condizione di coerenza cumulativa che genera un campo operativo stabile.",
+  "type": "emergent_state"
+}
