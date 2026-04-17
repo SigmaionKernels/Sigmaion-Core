@@ -1,0 +1,8 @@
+{
+  "id": "V05",
+  "name": "neurological_bypass",
+  "description": "Stimoli che bypassano il controllo razionale e attivano risposte automatiche.",
+  "effect": "reazioni impulsive",
+  "mitigation": "pausa forzata, respirazione, delay input",
+  "state": "active"
+}
