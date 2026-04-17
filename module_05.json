@@ -1,0 +1,8 @@
+{
+  "id": "M05",
+  "name": "decision_to_execution_pipeline",
+  "description": "Riduzione della latenza tra decisione e azione, eliminando loop di simulazione mentale.",
+  "effect": "incremento esecuzione reale",
+  "type": "cognitive_execution",
+  "state": "active"
+}
