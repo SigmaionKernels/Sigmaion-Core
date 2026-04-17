@@ -1,0 +1,8 @@
+{
+  "id": "V07",
+  "name": "forced_response_pressure",
+  "description": "Imposizione di risposte immediate che elimina il tempo di riflessione.",
+  "effect": "reazione invece di decisione",
+  "mitigation": "introduzione delay deliberato, silenzio operativo",
+  "state": "active"
+}
