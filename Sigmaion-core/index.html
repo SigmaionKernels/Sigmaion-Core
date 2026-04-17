@@ -67,9 +67,84 @@ h1 {
 }
 </style>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SIGMAION CORE</title>
+
+<style>
+body {
+    margin: 0;
+    background: black;
+    color: #00ff9f;
+    font-family: "Courier New", monospace;
+    text-align: center;
+}
+
+/* EFFETTO MATRIX BG */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* HEADER */
+h1 {
+    margin-top: 80px;
+    letter-spacing: 4px;
+    font-size: 26px;
+}
+
+/* CONTAINER */
+.container {
+    margin-top: 60px;
+}
+
+/* CARD */
+.card {
+    width: 300px;
+    margin: 20px auto;
+    padding: 25px;
+    border: 1px solid #00ff9f33;
+    background: rgba(0,0,0,0.8);
+}
+
+/* TITOLI */
+.card h2 {
+    letter-spacing: 2px;
+}
+
+/* BOTTONI */
+.btn {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 180px;
+    border: 1px solid #00ff9f;
+    color: #00ff9f;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #00ff9f;
+    color: black;
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 80px;
+    font-size: 12px;
+    color: #00ff9f66;
+}
+</style>
+
 </head>
 
 <body>
+
+<canvas id="matrix"></canvas>
 
 <h1>SIGMAION CORE</h1>
 
@@ -78,11 +153,6 @@ h1 {
     <div class="card">
         <h2>FALSEMIND</h2>
         <a class="btn" href="ebooks/Falsemind.pdf" download>DOWNLOAD</a>
-    </div>
-
-    <div class="card">
-        <h2>STOPSCROLL</h2>
-        <a class="btn" href="ebooks/Stopscroll.pdf" download>DOWNLOAD</a>
     </div>
 
     <div class="card">
@@ -98,8 +168,43 @@ h1 {
 </div>
 
 <div class="footer">
-    SIGMAION SYSTEM
+SIGMAION SYSTEM
 </div>
+
+<script>
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+
+const letters = "01Σ";
+const fontSize = 14;
+const columns = canvas.width / fontSize;
+
+const drops = Array.from({ length: columns }).fill(1);
+
+function draw() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#00ff9f";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+        }
+
+        drops[i]++;
+    }
+}
+
+setInterval(draw, 33);
+</script>
 
 </body>
 </html>
