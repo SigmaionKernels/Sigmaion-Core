@@ -1,0 +1,6 @@
+{
+  "id": "AR03",
+  "name": "total_responsibility_kernel",
+  "rule": "La coerenza del sistema è interamente responsabilità del nodo individuale senza backup esterno.",
+  "type": "structural"
+}
