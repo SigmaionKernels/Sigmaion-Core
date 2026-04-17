@@ -1,0 +1,8 @@
+{
+  "id": "ZD01",
+  "name": "chromatic_deprivation",
+  "description": "Riduzione dello stimolo visivo attraverso scala di grigi per diminuire input dopaminergico.",
+  "effect": "abbassamento stimolazione ambientale",
+  "type": "sensory",
+  "state": "active"
+}
