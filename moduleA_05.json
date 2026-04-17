@@ -1,0 +1,8 @@
+{
+  "id": "AM05",
+  "name": "identity_encryption_layer",
+  "description": "Crittografia dei trigger interni per impedire accesso e manipolazione esterna.",
+  "effect": "protezione identitaria",
+  "type": "security",
+  "state": "active"
+}
