@@ -1,0 +1,8 @@
+{
+  "id": "FM09",
+  "name": "environmental_imposition",
+  "description": "Architetture esterne che manipolano attenzione e decisione bypassando controllo cosciente.",
+  "effect": "riduzione autonomia decisionale",
+  "type": "external",
+  "state": "active"
+}
