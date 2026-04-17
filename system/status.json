@@ -1,0 +1,6 @@
+{
+  "core": "active",
+  "pipeline": "idle",
+  "deploy": "stable",
+  "version": "0.1"
+}
