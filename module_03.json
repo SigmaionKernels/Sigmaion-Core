@@ -1,0 +1,8 @@
+{
+  "id": "M03",
+  "name": "direct_action_through_attrition",
+  "description": "Esecuzione dell'azione nonostante resistenza cognitiva o evitamento automatico.",
+  "effect": "superamento blocchi evitativi",
+  "type": "execution",
+  "state": "active"
+}
