@@ -1,0 +1,6 @@
+{
+  "id": "R01",
+  "name": "trajectory_invariance",
+  "rule": "La stabilità del sistema è definita dalla coerenza della direzione, non da uno stato finale.",
+  "type": "systemic"
+}
