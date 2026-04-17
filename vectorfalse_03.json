@@ -1,0 +1,8 @@
+{
+  "id": "FM03",
+  "name": "cognitive_overflow",
+  "description": "Accumulo di input non processati oltre la capacità di elaborazione.",
+  "effect": "ansia e saturazione cognitiva",
+  "type": "load",
+  "state": "active"
+}
