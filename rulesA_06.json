@@ -1,0 +1,6 @@
+{
+  "id": "AR06",
+  "name": "trajectory_stability_over_goal",
+  "rule": "La stabilità del sistema dipende dalla traiettoria, non dal raggiungimento di uno stato finale.",
+  "type": "systemic"
+}
