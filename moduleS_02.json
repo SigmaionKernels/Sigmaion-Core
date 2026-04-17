@@ -1,0 +1,8 @@
+{
+  "id": "SS02",
+  "name": "sensory_reset_anchor",
+  "description": "Ricalibrazione dell'attenzione sul dato corporeo per uscire dal loop digitale.",
+  "effect": "ri-ancoraggio al presente fisico",
+  "type": "somatic",
+  "state": "active"
+}
