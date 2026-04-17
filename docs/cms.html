@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SIGMAION CMS</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #00ff66;
+      font-family: monospace;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      letter-spacing: 4px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    input, textarea {
+      width: 100%;
+      background: #000;
+      border: 1px solid #00ff66;
+      color: #00ff66;
+      padding: 10px;
+      margin-top: 10px;
+      font-family: monospace;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      background: #00ff66;
+      border: none;
+      color: #000;
+      cursor: pointer;
+    }
+
+    pre {
+      margin-top: 20px;
+      border: 1px solid #00ff66;
+      padding: 10px;
+      white-space: pre-wrap;
+    }
+
+    a {
+      color: #00ff66;
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>SIGMAION CMS</h1>
+
+  <div class="container">
+
+    <input id="title" placeholder="Titolo">
+    <textarea id="content" rows="10" placeholder="Contenuto"></textarea>
+
+    <button onclick="addEntry()">AGGIUNGI ENTRY</button>
+    <button onclick="downloadJSON()">ESPORTA JSON</button>
+
+    <pre id="output"></pre>
+
+    <a href="index.html">← HOME</a>
+  </div>
+
+<script>
+let data = {
+  system: "SIGMAION",
+  entries: []
+};
+
+function addEntry() {
+  const title = document.getElementById("title").value;
+  const content = document.getElementById("content").value;
+
+  data.entries.push({
+    title,
+    content,
+    timestamp: new Date().toISOString()
+  });
+
+  document.getElementById("output").textContent =
+    JSON.stringify(data, null, 2);
+}
+
+function downloadJSON() {
+  const blob = new Blob([JSON.stringify(data, null, 2)], {type: "application/json"});
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "sigmaion-content.json";
+  a.click();
+
+  URL.revokeObjectURL(url);
+}
+</script>
+
+</body>
+</html>

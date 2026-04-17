@@ -1,0 +1,8 @@
+{
+  "meta": {
+    "version": "1.0",
+    "system": "SIGMAION",
+    "source_of_truth": "articles.json"
+  },
+  "articles": []
+}

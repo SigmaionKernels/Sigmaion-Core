@@ -11,7 +11,6 @@
       background: #000;
       color: #00ff66;
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      overflow: hidden;
     }
 
     .wrap {
@@ -42,20 +41,28 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
+      width: 260px;
     }
 
     a {
       color: #00ff66;
       text-decoration: none;
       border: 1px solid #00ff66;
-      padding: 10px 18px;
-      display: inline-block;
+      padding: 10px 14px;
       transition: 0.2s;
+      display: block;
     }
 
     a:hover {
       background: #00ff66;
       color: #000;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 11px;
+      opacity: 0.5;
+      letter-spacing: 2px;
     }
 
     .scanline {
@@ -73,13 +80,6 @@
       );
       pointer-events: none;
     }
-
-    .footer {
-      margin-top: 20px;
-      font-size: 11px;
-      opacity: 0.5;
-      letter-spacing: 2px;
-    }
   </style>
 </head>
 
@@ -91,14 +91,16 @@
     <div class="subtitle">CORE SYSTEM ACTIVE</div>
 
     <div class="menu">
-      <a href="content/">EXPLORE CONTENT</a>
-      <a href="docs/">SYSTEM FILES</a>
-      <a href="https://github.com/SigmaionKernels/Sigmaion-Core" target="_blank">DOWNLOAD / REPO</a>
+      <a href="content.html">AUTO CONTENT SYSTEM</a>
+      <a href="cms.html">CMS EDITOR</a>
+      <a href="content/">CONTENT DIRECTORY</a>
+      <a href="system/status.json">SYSTEM STATUS</a>
+      <a href="https://github.com/SigmaionKernels/Sigmaion-Core" target="_blank">REPOSITORY</a>
     </div>
 
-    <div class="footer">STRUCTURE // SIGNAL // ARCHIVE</div>
+    <div class="footer">
+      STRUCTURE // PIPELINE // AUTOMATION
+    </div>
   </div>
 </body>
 </html>
-
-     <a href="content.html">AUTO CONTENT SYSTEM</a>
