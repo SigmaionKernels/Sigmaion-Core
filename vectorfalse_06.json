@@ -1,0 +1,8 @@
+{
+  "id": "FM06",
+  "name": "avoidance_loops",
+  "description": "Comportamenti di evitamento che riducono attrito immediato ma rinforzano il problema.",
+  "effect": "riduzione progressiva del campo d'azione",
+  "type": "behavioral",
+  "state": "active"
+}
