@@ -1,0 +1,6 @@
+{
+  "id": "SR02",
+  "name": "latency_over_impulse",
+  "rule": "L'aumento della latenza tra stimolo e risposta riduce la probabilità di comportamento automatico.",
+  "type": "behavioral"
+}
