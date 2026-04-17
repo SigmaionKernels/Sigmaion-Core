@@ -1,0 +1,8 @@
+{
+  "id": "SS03",
+  "name": "input_validation_filter",
+  "description": "Valutazione della necessità reale dell'input prima dell'assimilazione.",
+  "effect": "riduzione input inutili",
+  "type": "cognitive",
+  "state": "active"
+}
