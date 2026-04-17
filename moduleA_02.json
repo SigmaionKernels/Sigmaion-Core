@@ -1,0 +1,8 @@
+{
+  "id": "AM02",
+  "name": "zavtra_pruning_protocol",
+  "description": "Potatura selettiva dei processi per stabilizzare l'output del sistema.",
+  "effect": "riduzione rumore operativo",
+  "type": "filtering",
+  "state": "active"
+}
