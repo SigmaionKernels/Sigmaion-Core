@@ -1,0 +1,6 @@
+{
+  "id": "R03",
+  "name": "action_over_reflection",
+  "rule": "La risoluzione dei loop avviene tramite modifica dell'azione, non tramite analisi.",
+  "type": "behavioral"
+}
