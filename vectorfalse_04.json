@@ -1,0 +1,8 @@
+{
+  "id": "FM04",
+  "name": "depth_degradation",
+  "description": "Riduzione progressiva della capacità di concentrazione sostenuta.",
+  "effect": "incapacità di mantenere focus prolungato",
+  "type": "cognitive",
+  "state": "active"
+}
