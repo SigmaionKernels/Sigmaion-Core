@@ -1,0 +1,8 @@
+{
+  "id": "FM08",
+  "name": "compulsive_reassurance_seeking",
+  "description": "Ricerca continua di conferme esterne per ridurre ansia interna.",
+  "effect": "dipendenza da validazione",
+  "type": "behavioral",
+  "state": "active"
+}
