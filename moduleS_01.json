@@ -1,0 +1,8 @@
+{
+  "id": "SS01",
+  "name": "instant_motion_block",
+  "description": "Arresto immediato del gesto automatico di scroll.",
+  "effect": "interruzione loop dopaminico",
+  "type": "motor",
+  "state": "active"
+}
