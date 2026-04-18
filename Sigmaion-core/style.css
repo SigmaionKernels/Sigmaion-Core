@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  background: #000000;
+  font-family: monospace;
+  color: #00ff66;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.title {
+  font-size: 28px;
+  letter-spacing: 4px;
+  margin-bottom: 50px;
+  color: #00ff66;
+}
+
+.panel {
+  display: grid;
+  gap: 14px;
+}
+
+.btn {
+  width: 280px;
+  padding: 14px;
+  text-align: center;
+  border: 1px solid #00ff66;
+  color: #00ff66;
+  text-decoration: none;
+  transition: 0.15s;
+  background: transparent;
+}
+
+.btn:hover {
+  background: #00ff66;
+  color: #000000;
+}
+
+.sponsor {
+  opacity: 0.35;
+}
