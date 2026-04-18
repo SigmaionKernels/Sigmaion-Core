@@ -1,44 +1,27 @@
 class MULTI_STEP_PLANNER:
-    """
-    MSP v2:
-    trasforma un GOAL strutturato in una sequenza di task eseguibili (FIFO con dipendenze base)
-    """
 
     def __init__(self, max_steps=5):
         self.max_steps = max_steps
 
     def plan(self, goal):
-        """
-        input:
-            goal = {
-                "goal": str,
-                "type": "action | analysis | generation",
-                "priority": int,
-                "success_criteria": [],
-                "constraints": []
-            }
-
-        output:
-            list[task]
-        """
 
         goal_text = goal.get("goal", "")
         goal_type = goal.get("type", "generation")
 
         tasks = []
 
-        # STEP 1 — LOGGING SEMPRE PRESENTE
+        # STEP 1 — LOG SEMPRE
         tasks.append({
             "id": 1,
             "tool": "write_file",
             "params": {
                 "path": "output/log.txt",
-                "content": f"[MSP LOG] {goal_text}"
+                "content": f"[MSP] {goal_text}"
             },
             "depends_on": []
         })
 
-        # STEP 2 — BRANCH LOGICO PRINCIPALE
+        # STEP 2 — BRANCH LOGICO
         if goal_type == "action":
 
             tasks.append({
@@ -57,7 +40,7 @@ class MULTI_STEP_PLANNER:
                 "id": 2,
                 "tool": "run_command",
                 "params": {
-                    "command": "echo ANALYSIS_MODE_ACTIVE"
+                    "command": "echo ANALYSIS_MODE"
                 },
                 "depends_on": [1]
             })
@@ -72,7 +55,7 @@ class MULTI_STEP_PLANNER:
                 "depends_on": [2]
             })
 
-        else:  # generation / default
+        else:
 
             tasks.append({
                 "id": 2,
@@ -84,19 +67,15 @@ class MULTI_STEP_PLANNER:
                 "depends_on": [1]
             })
 
-        # STEP 3 — LIMITATORE DI COMPLESSITÀ
-        return self._apply_limits(tasks)
+        return self._limit(tasks)
 
-    def _apply_limits(self, tasks):
-        """
-        evita overengineering: tronca e normalizza la pipeline
-        """
+    def _limit(self, tasks):
 
         if len(tasks) > self.max_steps:
             tasks = tasks[:self.max_steps]
 
-        # normalizzazione ID (sicurezza pipeline)
-        for i, task in enumerate(tasks, start=1):
-            task["id"] = i
+        # normalizzazione ID
+        for i, t in enumerate(tasks, start=1):
+            t["id"] = i
 
         return tasks

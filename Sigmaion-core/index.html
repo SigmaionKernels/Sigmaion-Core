@@ -1,232 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="it">
 <head>
-<meta charset="UTF-8">
-<title>SIGMAION CORE SYSTEM</title>
+  <meta charset="utf-8">
+  <title>SIGMAION CORE</title>
 
-<style>
-body {
-    margin: 0;
-    background: black;
-    color: #00ff9f;
-    font-family: "Courier New", monospace;
-}
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #00ff66;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-/* MATRIX */
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
+    .wrap {
+      text-align: center;
+    }
 
-/* HEADER */
-h1 {
-    text-align: center;
-    margin-top: 60px;
-    letter-spacing: 5px;
-    font-size: 22px;
-}
+    .title {
+      font-size: 34px;
+      letter-spacing: 4px;
+      margin-bottom: 40px;
+    }
 
-/* SUB + COUNTDOWN */
-.sub {
-    text-align: center;
-    color: #00ff9f88;
-    font-size: 11px;
-    margin-top: 8px;
-}
+    .panel a {
+      display: block;
+      margin: 12px auto;
+      width: 260px;
+      padding: 12px;
+      border: 1px solid #00ff66;
+      color: #00ff66;
+      text-decoration: none;
+      transition: 0.15s;
+    }
 
-#countdown {
-    margin-top: 10px;
-    font-size: 12px;
-    letter-spacing: 2px;
-    color: #00ff9f;
-    text-align: center;
-}
+    .panel a:hover {
+      background: #00ff66;
+      color: #000;
+    }
 
-/* GRID */
-.grid {
-    width: 900px;
-    margin: 60px auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-/* BLOCK */
-.block {
-    border: 1px solid #00ff9f22;
-    background: rgba(0,0,0,0.85);
-    padding: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* TITLE */
-.block h2 {
-    margin: 0 0 12px 0;
-    font-size: 13px;
-    letter-spacing: 2px;
-}
-
-/* BUTTON */
-.btn {
-    display: inline-block;
-    width: 220px;
-    padding: 14px 0;
-    border: 1px solid #00ff9f;
-    color: #00ff9f;
-    text-decoration: none;
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-align: center;
-    transition: 0.15s;
-}
-
-.btn:hover {
-    background: #00ff9f;
-    color: black;
-}
-
-/* LIBRARY */
-.library {
-    grid-column: span 2;
-}
-
-/* META */
-.meta {
-    text-align: center;
-    margin-top: 8px;
-    font-size: 10px;
-    color: #00ff9f33;
-    letter-spacing: 1px;
-}
-
-/* FOOTER */
-.footer {
-    text-align: center;
-    margin-top: 60px;
-    font-size: 11px;
-    color: #00ff9f55;
-}
-</style>
-
+    .sub {
+      opacity: 0.4;
+      margin-top: 30px;
+      font-size: 12px;
+    }
+  </style>
 </head>
 
 <body>
 
-<canvas id="matrix"></canvas>
+<div class="wrap">
 
-<h1>SIGMAION CORE SYSTEM ACTIVE</h1>
+  <div class="title">Σ SIGMAION CORE</div>
 
-<div class="sub">STRUCTURE INITIALIZED</div>
-<div id="countdown">INITIALIZING: 10:00</div>
+  <div class="panel">
+    <a href="http://127.0.0.1:5000/login">CMS LOGIN</a>
+    <a href="http://127.0.0.1:5000/articles">ARTICLES</a>
+    <a href="http://127.0.0.1:5000/editor">EDITOR</a>
+    <a href="https://github.com/">REPOSITORY</a>
+  </div>
 
-<div class="grid">
-
-    <div class="block">
-        <h2>AUTOCONTENT</h2>
-        <a class="btn" href="#">ENTER MODULE</a>
-    </div>
-
-    <div class="block">
-        <h2>CMS EDITOR</h2>
-        <a class="btn" href="#">OPEN EDITOR</a>
-    </div>
-
-    <div class="block">
-        <h2>CONTENT DIRECTORY</h2>
-        <a class="btn" href="#">VIEW STRUCTURE</a>
-    </div>
-
-    <div class="block">
-        <h2>SYSTEM STATUS</h2>
-        <a class="btn" href="#">RUN CHECK</a>
-    </div>
-
-    <div class="block">
-        <h2>REPOSITORY</h2>
-        <a class="btn" href="https://github.com/sigmaionkernels" target="_blank">
-            OPEN GITHUB
-        </a>
-    </div>
-
-    <!-- LIBRARY -->
-    <div class="block library">
-        <h2>LIBRARY ACCESS</h2>
-        <a class="btn" href="https://sigmaionkernels.github.io/Sigmaion-Core/">
-            ENTER LIBRARY
-        </a>
-    </div>
+  <div class="sub">
+    static layer / gateway interface
+  </div>
 
 </div>
-
-<div class="meta">
-structure // pipeline // automation
-</div>
-
-<div class="footer">
-SIGMAION SYSTEM • CORE MODULE
-</div>
-
-<script>
-/* MATRIX */
-const canvas = document.getElementById("matrix");
-const ctx = canvas.getContext("2d");
-
-canvas.height = window.innerHeight;
-canvas.width = window.innerWidth;
-
-const letters = "01Σ";
-const fontSize = 14;
-const columns = canvas.width / fontSize;
-const drops = Array.from({ length: columns }).fill(1);
-
-function draw() {
-    ctx.fillStyle = "rgba(0,0,0,0.05)";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
-
-    ctx.fillStyle = "#00ff9f";
-    ctx.font = fontSize + "px monospace";
-
-    for(let i=0;i<drops.length;i++){
-        const text = letters[Math.floor(Math.random()*letters.length)];
-        ctx.fillText(text,i*fontSize,drops[i]*fontSize);
-
-        if(drops[i]*fontSize > canvas.height && Math.random()>0.975){
-            drops[i]=0;
-        }
-        drops[i]++;
-    }
-}
-
-setInterval(draw,33);
-
-/* COUNTDOWN */
-let time = 600;
-
-const countdownEl = document.getElementById("countdown");
-
-function updateCountdown() {
-    let min = Math.floor(time / 60);
-    let sec = time % 60;
-
-    if (sec < 10) sec = "0" + sec;
-
-    countdownEl.innerText = `SYSTEM LOCK IN: ${min}:${sec}`;
-
-    if (time > 0) {
-        time--;
-    } else {
-        countdownEl.innerText = "SYSTEM STATUS: ACTIVE";
-        clearInterval(timer);
-    }
-}
-
-const timer = setInterval(updateCountdown, 1000);
-</script>
 
 </body>
 </html>

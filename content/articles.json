@@ -4,5 +4,31 @@
     "system": "SIGMAION",
     "source_of_truth": "articles.json"
   },
-  "articles": []
+  "articles": [
+    {
+      "title": "test",
+      "content": "auto-generated",
+      "timestamp": 1776535758330
+    },
+    {
+      "title": "test",
+      "content": "auto-generated",
+      "timestamp": 1776535762482
+    },
+    {
+      "title": "test",
+      "content": "auto-generated",
+      "timestamp": 1776535762704
+    },
+    {
+      "title": "test",
+      "content": "auto-generated",
+      "timestamp": 1776535762936
+    },
+    {
+      "title": "test",
+      "content": "auto-generated",
+      "timestamp": 1776537330076
+    }
+  ]
 }

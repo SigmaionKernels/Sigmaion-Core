@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SIGMAION CONTROL</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<h1>SIGMAION CORE DASHBOARD</h1>
+
+<div class="panel">
+
+    <input id="input" placeholder="Enter goal..." />
+
+    <button onclick="run()">EXECUTE</button>
+    <button onclick="start()">START TS</button>
+    <button onclick="stop()">STOP TS</button>
+
+</div>
+
+<pre id="output"></pre>
+
+<script>
+
+async function run(){
+
+    const input = document.getElementById("input").value;
+
+    const res = await fetch("/api/run", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({input})
+    });
+
+    const data = await res.json();
+
+    document.getElementById("output").innerText =
+        JSON.stringify(data, null, 2);
+}
+
+async function start(){
+
+    await fetch("/api/start", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({seed: document.getElementById("input").value || "auto"})
+    });
+}
+
+async function stop(){
+
+    await fetch("/api/stop", {
+        method: "POST"
+    });
+}
+
+</script>
+
+</body>
+</html>

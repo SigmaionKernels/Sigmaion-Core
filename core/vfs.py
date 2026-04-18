@@ -1,67 +1,59 @@
 class VALIDATION_FEEDBACK_SYSTEM:
 
-    def __init__(self, max_retries=1):
-        self.max_retries = max_retries
+    def __init__(self, pass_threshold=0.75, retry_threshold=0.4):
+        self.pass_threshold = pass_threshold
+        self.retry_threshold = retry_threshold
 
     def evaluate(self, goal, execution_results):
 
-        """
-        input:
-            goal (GMS)
-            execution_results (AE output list)
-
-        output:
-            {
-                "status": "pass | retry | fail",
-                "score": float,
-                "action": str
+        if not execution_results:
+            return {
+                "status": "fail",
+                "score": 0.0,
+                "action": "stop"
             }
-        """
 
-        score = self._compute_score(goal, execution_results)
+        score = self._score(execution_results, goal)
 
-        if score >= 0.75:
+        if score >= self.pass_threshold:
             return {
                 "status": "pass",
                 "score": score,
                 "action": "continue"
             }
 
-        elif score >= 0.4:
+        if score >= self.retry_threshold:
             return {
                 "status": "retry",
                 "score": score,
                 "action": "rebuild_tasks"
             }
 
-        else:
-            return {
-                "status": "fail",
-                "score": score,
-                "action": "stop"
-            }
+        return {
+            "status": "fail",
+            "score": score,
+            "action": "stop"
+        }
 
-    def _compute_score(self, goal, results):
+    def _score(self, results, goal):
 
-        # baseline heuristica semplice ma stabile
-
-        if not results:
-            return 0.0
-
-        success_count = 0
+        success = 0
         total = len(results)
 
         for r in results:
             if r["result"].get("status") == "success":
-                success_count += 1
+                success += 1
 
-        base_score = success_count / total
+        base = success / total if total > 0 else 0
 
-        # bonus: coerenza con goal type
+        # bonus minimal coerente
         if goal.get("type") == "action":
-            base_score += 0.05
+            base += 0.05
 
         if goal.get("priority", 3) == 1:
-            base_score += 0.05
+            base += 0.05
 
-        return min(base_score, 1.0)
+        if base > 1:
+            base = 1
+
+        return base
