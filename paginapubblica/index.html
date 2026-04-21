@@ -2,9 +2,8 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>SIGMAION</title>
+  <title>SIGMAION CORE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <style>
     body {
       margin: 0;
@@ -12,54 +11,45 @@
       color: #00ff66;
       font-family: monospace;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
-    }
-
-    .container {
       text-align: center;
     }
 
-    .node {
+    a {
       display: block;
-      margin: 14px auto;
-      width: 200px;
-      padding: 14px;
+      margin: 12px;
+      padding: 12px;
       border: 1px solid #00ff66;
       color: #00ff66;
       text-decoration: none;
+      width: 220px;
     }
 
-    .node:hover {
-      background: #00ff6610;
-      box-shadow: 0 0 12px #00ff66;
+    a:hover {
+      background: rgba(0,255,102,0.1);
     }
 
-    .footer {
-      margin-top: 30px;
+    .hint {
+      margin-top: 20px;
       font-size: 12px;
-      opacity: 0.6;
+      opacity: 0.7;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+  <div>
+    <h2>SIGMAION CORE</h2>
 
-    <a class="node" href="./engineering/">
-      ENGINEERING
-    </a>
+    <a href="./engineering/">ENGINEERING</a>
+    <a href="./library/">LIBRARY</a>
 
-    <a class="node" href="./library/">
-      LIBRARY
-    </a>
-
-    <div class="footer">
-      sigmaion core entry
+    <div class="hint">
+      system router node
     </div>
-
   </div>
 
 </body>
