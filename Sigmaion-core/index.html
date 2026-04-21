@@ -1,73 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8">
-  <title>SIGMAION CORE</title>
+  <meta charset="UTF-8">
+  <title>SIGMAION</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       margin: 0;
-      background: #000;
+      background: #020403;
       color: #00ff66;
       font-family: monospace;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       height: 100vh;
     }
 
-    .wrap {
+    .container {
       text-align: center;
     }
 
-    .title {
-      font-size: 34px;
-      letter-spacing: 4px;
-      margin-bottom: 40px;
-    }
-
-    .panel a {
+    .node {
       display: block;
-      margin: 12px auto;
-      width: 260px;
-      padding: 12px;
+      margin: 14px auto;
+      width: 200px;
+      padding: 14px;
       border: 1px solid #00ff66;
       color: #00ff66;
       text-decoration: none;
-      transition: 0.15s;
     }
 
-    .panel a:hover {
-      background: #00ff66;
-      color: #000;
+    .node:hover {
+      background: #00ff6610;
+      box-shadow: 0 0 12px #00ff66;
     }
 
-    .sub {
-      opacity: 0.4;
+    .footer {
       margin-top: 30px;
       font-size: 12px;
+      opacity: 0.6;
     }
   </style>
 </head>
 
 <body>
 
-<div class="wrap">
+  <div class="container">
 
-  <div class="title">Σ SIGMAION CORE</div>
+    <a class="node" href="./engineering/">
+      ENGINEERING
+    </a>
 
-  <div class="panel">
-    <a href="http://127.0.0.1:5000/login">CMS LOGIN</a>
-    <a href="http://127.0.0.1:5000/articles">ARTICLES</a>
-    <a href="http://127.0.0.1:5000/editor">EDITOR</a>
-    <a href="https://github.com/">REPOSITORY</a>
+    <a class="node" href="./library/">
+      LIBRARY
+    </a>
+
+    <div class="footer">
+      sigmaion core entry
+    </div>
+
   </div>
-
-  <div class="sub">
-    static layer / gateway interface
-  </div>
-
-</div>
 
 </body>
 </html>
